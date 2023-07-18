@@ -10,8 +10,8 @@ export const categoryFilters = [
   "Machine Learning",
   "Cybersecurity",
   "Blockchain",
-  "E-commerce",
-  "Chatbots",
+  "Electronics",
+  "Other",
 ];
 
 export const footerLinks = [

@@ -103,7 +103,7 @@ body {
 
 /* Footer */
 .footer {
-  @apply flex-col paddings w-full gap-20 bg-zinc-100;
+  @apply flex-col paddings w-full gap-20 bg-indigo-900 text-light-white-200;
 }
 
 .footer_copyright {
@@ -125,12 +125,12 @@ body {
 }
 
 .modal_wrapper {
-  @apply flex justify-start items-center flex-col absolute h-[95%] w-full bottom-0 bg-white rounded-t-3xl lg:px-40 px-8 pt-14 pb-72 overflow-auto;
+  @apply flex justify-start items-center flex-col absolute h-[95%] w-full bottom-0 bg-slate-300 rounded-t-3xl lg:px-40 px-8 pt-14 pb-72 overflow-auto;
 }
 
 /* Navbar */
 .navbar {
-  @apply py-5 px-8 border-b border-nav-border bg-black text-light-white-100 gap-4;
+  @apply py-3 px-8 border-b border-nav-border bg-blue-950 text-light-white-100 gap-4;
 }
 
 /* Profile Menu */
@@ -153,7 +153,7 @@ body {
 }
 
 .form_image-label {
-  @apply z-10 text-center w-full h-full p-20 text-gray-100 border-2 border-gray-50 border-dashed;
+  @apply z-10 text-center w-full h-full p-20 text-gray-100 border-2 border-neutral-900 border-dashed;
 }
 
 .form_image-input {

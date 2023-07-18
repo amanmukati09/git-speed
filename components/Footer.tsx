@@ -10,7 +10,7 @@ type ColumnProps = {
 
 const FooterColumn = ({ title, links }: ColumnProps) => (
   <div className="footer_column">
-    <h4 className="font-semibold">{title}</h4>
+    <h4 className="font-semibold text-lg text-cyan-500 ">{title}</h4>
     <ul className="flex flex-col gap-2 font-normal">
       {links.map((link) => (
         <Link href="/" key={link}>
@@ -24,10 +24,10 @@ const FooterColumn = ({ title, links }: ColumnProps) => (
 const Footer = () => (
   <section className="flexStart footer">
     <div className="flex flex-col gap-12 w-full">
-      <div className="flex items-start flex-col">
+      <div className="flex items-center flex-col">
         <Image src="/logo.svg" width={116} height={38} alt="logo" />
 
-        <p className="text-start text-sm font-normal mt-2 max-w-xs">
+        <p className="text-center  text-sm font-normal mt-3 w-full text-orange-500">
           Byte Craft is the premier global platform for creatives to connect, inspire, and pursue new opportunities.
         </p>
       </div>
