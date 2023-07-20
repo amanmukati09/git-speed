@@ -23,7 +23,7 @@ const ProjectActions = ({ projectId }: Props) => {
     try {
       await deleteProject(projectId, token);
 
-      router.push("/");
+      router.push(`/?category=Frontend`);
     } catch (error) {
       console.error(error);
     } finally {

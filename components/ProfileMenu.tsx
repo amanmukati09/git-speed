@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { signOut } from "next-auth/react";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
 
 import { SessionInterface } from "@/common.types";
@@ -11,10 +11,20 @@ import { SessionInterface } from "@/common.types";
 const ProfileMenu = ({ session }: { session: SessionInterface }) => {
   const [openModal, setOpenModal] = useState(false);
 
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timerID = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timerID);
+  }, []);
+
   return (
     <div className="flexCenter z-10 flex-col relative">
       <Menu as="div">
-        <Menu.Button className="flexCenter" onMouseEnter={() => setOpenModal(true)}>
+        <Menu.Button className="flexCenter" onClick={() => setOpenModal(true)} onMouseEnter={() => setOpenModal(true)}>
           {session?.user?.image && (
             <Image src={session.user.image} width={40} height={40} className="rounded-full" alt="user profile image" />
           )}
@@ -30,7 +40,12 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items static className="flexStart profile_menu-items" onMouseLeave={() => setOpenModal(false)}>
+          <Menu.Items
+            static
+            className="flexStart profile_menu-items border-t border-zinc-200"
+            onMouseLeave={() => setOpenModal(false)}
+            onDoubleClick={() => setOpenModal(false)}
+          >
             <div className="flex flex-col items-center gap-y-4">
               {session?.user?.image && (
                 <Image src={session?.user?.image} className="rounded-full" width={80} height={80} alt="profile Image" />
@@ -38,7 +53,8 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
               <p className="font-semibold text-black">{session?.user?.name}</p>
             </div>
 
-            <div className="flex flex-col gap-3 pt-10 items-start w-full">
+            <div className="flex flex-col gap-3 pt-7  w-full">
+              <h2 className="text-slate-900">Time : {currentTime.toLocaleTimeString()} </h2>
               <Menu.Item>
                 <Link href={`/profile/${session?.user?.id}`} className="text-sm text-black">
                   Profile

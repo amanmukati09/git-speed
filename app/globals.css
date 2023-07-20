@@ -12,6 +12,8 @@
 
 body {
   font-family: Inter;
+  height: 100%;
+  background-color: rgb(219, 228, 236);
 }
 
 .flexCenter {
@@ -63,7 +65,7 @@ body {
 
 /* Home */
 .projects-grid {
-  @apply grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 mt-10 w-full;
+  @apply grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 mt-10  w-full;
 }
 
 /* Project Actions */
@@ -90,7 +92,7 @@ body {
 
 /* Custom Menu */
 .custom_menu-btn {
-  @apply gap-4 w-full rounded-md bg-light-white-100 p-4 text-base outline-none capitalize;
+  @apply gap-4 w-full rounded-md bg-light-white-100  p-4 text-base outline-none capitalize;
 }
 
 .custom_menu-items {
@@ -103,15 +105,7 @@ body {
 
 /* Footer */
 .footer {
-  @apply flex-col paddings w-full gap-20 bg-indigo-900 text-light-white-200;
-}
-
-.footer_copyright {
-  @apply max-sm:flex-col w-full items-center text-sm font-normal;
-}
-
-.footer_column {
-  @apply flex-1 flex flex-col gap-3 text-sm min-w-max;
+  @apply flex-col w-full py-3  h-[10vh] bg-indigo-900 fixed bottom-0 text-light-white-200;
 }
 
 /* Form Field */
@@ -130,12 +124,12 @@ body {
 
 /* Navbar */
 .navbar {
-  @apply py-3 px-8 border-b border-nav-border bg-blue-950 text-light-white-100 gap-4;
+  @apply py-1 px-4 border-b sticky top-0 z-10 border-nav-border bg-blue-950 text-light-white-100 gap-4;
 }
 
 /* Profile Menu */
 .profile_menu-items {
-  @apply flex-col absolute right-1/2 translate-x-1/2 mt-3 p-7 sm:min-w-[300px] min-w-max rounded-xl bg-white border border-nav-border shadow-menu;
+  @apply flex-col absolute right-1/2 translate-x-1/2 mt-3 p-7 sm:min-w-[300px] min-w-max rounded-xl bg-white border  shadow-menu;
 }
 
 /* Profile Card */
