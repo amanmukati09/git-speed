@@ -124,7 +124,7 @@ body {
 
 /* Navbar */
 .navbar {
-  @apply py-1 px-4 border-b sticky top-0 z-10 border-nav-border bg-blue-950 text-light-white-100 gap-4;
+  @apply py-3 px-4 border-b sticky top-0 z-10 border-nav-border bg-blue-950 text-light-white-100 gap-4;
 }
 
 /* Profile Menu */
